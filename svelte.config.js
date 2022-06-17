@@ -5,6 +5,7 @@ import { mdsvex } from 'mdsvex'
 /** @type {import('mdsvex').MdsvexCompileOptions} */
 const mdsvexConfig = {
   extensions: ['.md'],
+  layout: './src/layout.svelte',
 }
 
 /** @type {import('@sveltejs/kit').Config} */
