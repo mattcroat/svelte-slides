@@ -7,10 +7,11 @@ function slideDeck() {
     markup: async ({ content, filename }) => {
       if (filename.endsWith('md')) {
         let slideRegex = /<.*\/?h[1-6]>[\s\S]*?<hr>/gi
+        let slideIndex = 1
 
         const slidesHTML = content.replace(slideRegex, (match) => {
           const html = match.replace('<hr>', '')
-          return `<div class="slide">${html}</div>`
+          return `<Slide slideIndex={${slideIndex++}}>${html}</Slide>`
         })
 
         return { code: slidesHTML }

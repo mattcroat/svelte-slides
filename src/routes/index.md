@@ -1,6 +1,14 @@
+<script>
+  // Used for slides
+  import Slide from '$lib/components/deck/slide.svelte'
+
+  // Markdown components
+  import Counter from '$lib/components/counter.svelte'
+</script>
+
 # Slide 1
 
-Content
+<Counter />
 
 ---
 
