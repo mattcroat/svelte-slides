@@ -2,6 +2,23 @@ import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
 import { mdsvex } from 'mdsvex'
 
+function slideDeck() {
+  return {
+    markup: async ({ content, filename }) => {
+      if (filename.endsWith('md')) {
+        let slideRegex = /<.*\/?h[1-6]>[\s\S]*?<hr>/gi
+
+        const slidesHTML = content.replace(slideRegex, (match) => {
+          const html = match.replace('<hr>', '')
+          return `<div class="slide">${html}</div>`
+        })
+
+        return { code: slidesHTML }
+      }
+    },
+  }
+}
+
 /** @type {import('mdsvex').MdsvexCompileOptions} */
 const mdsvexConfig = {
   extensions: ['.md'],
@@ -12,7 +29,7 @@ const mdsvexConfig = {
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: [preprocess(), mdsvex(mdsvexConfig)],
+  preprocess: [preprocess(), mdsvex(mdsvexConfig), slideDeck()],
   extensions: ['.svelte', '.md'],
 
   kit: {
