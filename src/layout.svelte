@@ -6,9 +6,16 @@
 <slot />
 
 <style>
+  :global(*) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   :global(body) {
-    font-family: sans-serif;
-    color: white;
-    background-color: black;
+    font-family: 'Inter', sans-serif;
+    color: hsl(220 20% 98%);
+    background-color: hsl(220 20% 14%);
+    overflow: hidden;
   }
 </style>
