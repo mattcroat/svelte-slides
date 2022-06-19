@@ -6,26 +6,44 @@
   import Counter from '$lib/components/mdsvex/counter.svelte'
 </script>
 
-# Slide 1
+# Components
 
 <Counter />
 
 ---
 
-# Slide 2
+# Syntax Highlight
 
-Content
+```js
+function greet(message) {
+  console.log(message)
+}
+
+greet('Hola 👋')
+```
 
 ---
 
-# Slide 3
+# Markdown
 
-Content
+> Blockquote
+
+**Bold**
+
+_Emphasis_
+
+~~Strikethrough~~
 
 ---
 
-# Slide 4
+# Media
 
-Content
+![Rick Astley](https://i.giphy.com/media/Ju7l5y9osyymQ/giphy.webp)
+
+---
+
+# Get Started
+
+[https://github.com/mattcroat/svelte-slides](https://github.com/mattcroat/svelte-slides)
 
 ---
