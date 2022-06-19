@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   // Used for slides
-  import Slide from '$lib/components/deck/slide.svelte'
+  import Slide from '$lib/components/mdsvex/slide.svelte'
 
   // Markdown components
-  import Counter from '$lib/components/counter.svelte'
+  import Counter from '$lib/components/mdsvex/counter.svelte'
 </script>
 
 # Slide 1

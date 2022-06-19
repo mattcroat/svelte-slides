@@ -23,4 +23,21 @@
     place-content: center;
     gap: 2rem;
   }
+
+  .slideFromRight {
+    animation: 0.4s slide;
+  }
+
+  .slideFromLeft {
+    animation: 0.4 slide reverse;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
 </style>
