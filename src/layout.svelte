@@ -4,15 +4,19 @@
 </script>
 
 <script lang="ts">
-  import { currentSlide } from '$lib/stores/slides'
+  import { currentSlide, slideDirection } from '$lib/stores/slides'
 
   function handleKeydown(event: KeyboardEvent) {
     switch (event.key) {
       case 'ArrowRight':
         $currentSlide += 1
+        $slideDirection = 'right'
         break
       case 'ArrowLeft':
-        if ($currentSlide > 1) $currentSlide -= 1
+        if ($currentSlide > 1) {
+          $currentSlide -= 1
+          $slideDirection = 'left'
+        }
         break
     }
   }
@@ -38,5 +42,13 @@
     color: hsl(220 20% 98%);
     background-color: hsl(220 20% 14%);
     overflow: hidden;
+  }
+
+  :global(img) {
+    border-radius: 20px;
+  }
+
+  :global(a) {
+    color: hsl(220 20% 98%);
   }
 </style>

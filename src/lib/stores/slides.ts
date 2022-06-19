@@ -3,7 +3,8 @@ import { browser } from '$app/env'
 
 let currentSlideIndex = browser ? +window.location.hash.substring(1) : 1
 
-export const currentSlide = writable(currentSlideIndex)
+export const currentSlide = writable<number>(currentSlideIndex)
+export const slideDirection = writable<'right' | 'left'>()
 
 function updateCurrentSlide() {
   if (!browser) return
