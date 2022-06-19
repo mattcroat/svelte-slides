@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { currentSlide } from '$lib/stores/slides'
+
   export let slideIndex: number
 
-  const currentSlideIndex = 1
-  const show = slideIndex === currentSlideIndex
+  $: show = slideIndex === $currentSlide
 </script>
 
 <div class="slide" class:show>

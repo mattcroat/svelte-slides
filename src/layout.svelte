@@ -3,6 +3,27 @@
   export { h1 }
 </script>
 
+<script lang="ts">
+  import { currentSlide } from '$lib/stores/slides'
+
+  function handleKeydown(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'ArrowRight':
+        $currentSlide += 1
+        break
+      case 'ArrowLeft':
+        if ($currentSlide > 1) $currentSlide -= 1
+        break
+    }
+  }
+</script>
+
+<svelte:head>
+  <title>Svelte Slides</title>
+</svelte:head>
+
+<svelte:window on:keydown={handleKeydown} />
+
 <slot />
 
 <style>
