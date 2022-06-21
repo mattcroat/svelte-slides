@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { currentSlide } from '$lib/stores/slides'
 
-  export let slideIndex
+  export let slideIndex: number
 
   $: show = slideIndex === $currentSlide
   $: left = slideIndex < $currentSlide
