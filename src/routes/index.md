@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   // Used for slides
   import Slide from '$lib/components/mdsvex/slide.svelte'
 

@@ -1,21 +1,21 @@
-<script context="module" lang="ts">
+<script context="module">
   import h1 from '$lib/components/mdsvex/h1.svelte'
   export { h1 }
+
+  import './styles/global.css'
 </script>
 
 <script lang="ts">
-  import { currentSlide, slideDirection } from '$lib/stores/slides'
+  import { currentSlide } from '$lib/stores/slides'
 
-  function handleKeydown(event: KeyboardEvent) {
+  function handleKeydown(event) {
     switch (event.key) {
       case 'ArrowRight':
         $currentSlide += 1
-        $slideDirection = 'right'
         break
       case 'ArrowLeft':
         if ($currentSlide > 1) {
           $currentSlide -= 1
-          $slideDirection = 'left'
         }
         break
     }
@@ -29,26 +29,3 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <slot />
-
-<style>
-  :global(*) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :global(body) {
-    font-family: 'Inter', sans-serif;
-    color: hsl(220 20% 98%);
-    background-color: hsl(220 20% 14%);
-    overflow: hidden;
-  }
-
-  :global(img) {
-    border-radius: 20px;
-  }
-
-  :global(a) {
-    color: hsl(220 20% 98%);
-  }
-</style>
