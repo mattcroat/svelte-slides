@@ -1,15 +1,17 @@
-<script context="module" lang="ts">
+<script context="module">
   import h1 from '$lib/components/mdsvex/h1.svelte'
   export { h1 }
 
   import './styles/global.css'
+  import './styles/syntax.css'
 </script>
 
-<script lang="ts">
+<script>
   import { currentSlide } from '$lib/stores/slides'
 
-  // for some reason this being typed causes an error by the preprocessor
-  // is it because it's not processing TypeScript?
+  // mdsvex doesn't support TypeScript yet
+  // https://github.com/pngwn/MDsveX/issues/116
+  // @ts-ignore
   function handleKeydown(event) {
     switch (event.key) {
       case 'ArrowRight':
@@ -30,4 +32,18 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<slot />
+<div class="slides">
+  <slot />
+</div>
+
+<style>
+  .slides {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+  }
+
+  .slides > :global(*) {
+    grid-area: 1 / 1;
+  }
+</style>

@@ -20,7 +20,6 @@
     place-content: center;
     gap: 2rem;
     font-size: 4vw;
-    font-weight: 700;
     text-align: center;
     opacity: 0;
     transition: transform 1s, opacity 1s;
