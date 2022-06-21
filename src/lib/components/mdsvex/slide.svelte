@@ -32,11 +32,13 @@
 
   .left {
     opacity: 0;
-    transform: translate(-100%);
+    transform: rotate(-45deg) translate(-100%, 25%);
+    filter: blur(4px);
   }
 
   .right {
     opacity: 0;
-    transform: translate(100%);
+    transform: rotate(45deg) translate(100%, 25%);
+    filter: blur(4px);
   }
 </style>
