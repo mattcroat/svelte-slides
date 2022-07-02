@@ -50,7 +50,7 @@ You can navigate using `ArrowLeft` and `ArrowRight` but you can change and exten
 ## Theming
 
 - Global styles are inside `styles/global.css`
-- Syntax highlight styles are inside `styles/syntax.css` using [Night Howl](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css) as the default theme but you can find more [Prism themes](https://github.com/PrismJS/prism-themes) or create your own
+- Syntax highlight styles are inside `styles/syntax.css` using [Night Owl](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-night-owl.css) as the default theme but you can find more [Prism themes](https://github.com/PrismJS/prism-themes) or create your own
 - You can change the slide styles in `slide.svelte`
 
 ## Custom Components
